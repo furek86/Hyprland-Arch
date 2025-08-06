@@ -57,8 +57,6 @@ _fzf_compgen_dir() {
   fd --type=d --hidden --exclude .git . "$1"
 }
 
-source ~/.fzf-git.sh/fzf-git.sh
-
 show_file_or_dir_preview="if [ -d {} ]; then eza --tree --color=always {} | head -200; else bat -n --color=always --line-range :500 {}; fi"
 
 export FZF_CTRL_T_OPTS="--preview '$show_file_or_dir_preview'"
@@ -88,13 +86,10 @@ export BAT_THEME="gruvbox-dark"
 
 # Aliases for custom commands
 alias cat="bat"
-alias ls="eza --icons=always --color=always --long"
+alias ls="eza --icons=always --color=always --long --all"
 alias img="kitten icat"
 
 # Aliases for custom locations
 
 alias home="cd ~"
 
-# Configure SSH agent and add keys
-eval "$(ssh-agent -s)" > /dev/null 
-ssh-add ~/.ssh/id_github_furek86 2>/dev/null
