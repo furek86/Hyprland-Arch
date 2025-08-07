@@ -5,11 +5,6 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
--- Set default indentation
-vim.o.expandtab = true
-vim.o.shiftwidth = 2
-vim.o.softtabstop = 2
-
 -- Set nerd font
 vim.g.have_nerd_font = true
 
@@ -17,8 +12,8 @@ vim.g.have_nerd_font = true
 vim.opt.number = true
 vim.opt.relativenumber = true
 
--- Disable mouse cause we don't need it! Force yourself to use keyboard
-vim.opt.mouse = "a"
+-- Use mouse only in normal mode
+vim.opt.mouse = "n"
 
 -- Don't show mode, it is already displayed in the status line
 vim.opt.showmode = false
@@ -35,6 +30,12 @@ vim.opt.smartcase = true
 
 -- Keep signcolumn on by default
 vim.opt.signcolumn = "yes"
+
+-- Set tab width to 2 spaces
+vim.opt.tabstop = 2
+vim.opt.shiftwidth = 2
+vim.opt.softtabstop = 2
+vim.opt.expandtab = true -- Use spaces instead of tabs
 
 -- Decrease update time
 vim.opt.updatetime = 250
@@ -82,6 +83,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 		vim.highlight.on_yank()
 	end,
 })
+
 --------------------------------------------------------------------------------
 -- Plugin Manager - Lazy --
 --------------------------------------------------------------------------------
@@ -95,24 +97,4 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup("plugins", {
-	ui = {
-		-- If you are using a Nerd Font: set icons to an empty table which will use the
-		-- default lazy.nvim defined Nerd Font icons, otherwise define a unicode icons table
-		icons = vim.g.have_nerd_font and {} or {
-			cmd = "⌘",
-			config = "🛠",
-			event = "📅",
-			ft = "📂",
-			init = "⚙",
-			keys = "🗝",
-			plugin = "🔌",
-			runtime = "💻",
-			require = "🌙",
-			source = "📄",
-			start = "🚀",
-			task = "📌",
-			lazy = "💤 ",
-		},
-	},
-})
+require("lazy").setup("plugins")
