@@ -2,5 +2,5 @@ theme = catppuccin-mocha
 font-family = Annotation Mono 
 font-family-bold = Annotation Mono Bold
 font-style = Bold
-font-size = 13
+font-size = 12
 background-opacity = 0.95
