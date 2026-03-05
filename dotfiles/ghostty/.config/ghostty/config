@@ -1,4 +1,4 @@
-theme = catppuccin-mocha
+theme = catppuccin-mocha.conf
 font-family = Annotation Mono 
 font-family-bold = Annotation Mono Bold
 font-style = Bold

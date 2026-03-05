@@ -93,3 +93,4 @@ alias img="kitten icat"
 
 alias home="cd ~"
 
+eval "$(ssh-agent -s)"
