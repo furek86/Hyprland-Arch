@@ -1,0 +1,18 @@
+# Static information about the filesystems.
+# See fstab(5) for details.
+
+# <file system> <dir> <type> <options> <dump> <pass>
+# /dev/nvme1n1p2
+UUID=823d77c2-5175-475a-8ecc-8e9a9d210afc	/         	btrfs     	rw,relatime,compress=zstd:3,ssd,discard=async,space_cache=v2,subvol=/	0 0
+
+# /dev/nvme1n1p1
+UUID=43AC-48F8      	/boot     	vfat      	rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=ascii,shortname=mixed,utf8,errors=remount-ro	0 2
+
+# /dev/nvme1n1p3
+UUID=2d4dd16b-91a9-4204-a3f9-21d9c7b469c7	/home     	btrfs     	rw,relatime,compress=zstd:3,ssd,discard=async,space_cache=v2,subvol=/	0 0
+
+# swapfile
+/swapfile	none	swap	defaults	0	0
+
+# NFS share for my SAN
+10.12.250.51:/   /mnt/fuczek_nas   nfs4   _netdev,noatime,hard,intr,timeo=600,retrans=5,x-systemd.automount   0   0

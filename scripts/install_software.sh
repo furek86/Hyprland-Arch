@@ -16,4 +16,8 @@ sudo pacman -S --noconfirm \
     bat \
     exa \
     fzf \
+    yazi \
+    gtop \
+    tmux \
+
     
