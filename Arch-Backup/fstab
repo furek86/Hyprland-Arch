@@ -13,6 +13,3 @@ UUID=2d4dd16b-91a9-4204-a3f9-21d9c7b469c7	/home     	btrfs     	rw,relatime,comp
 
 # swapfile
 /swapfile	none	swap	defaults	0	0
-
-# NFS share for my SAN
-10.12.250.51:/   /mnt/fuczek_nas   nfs4   _netdev,noatime,hard,intr,timeo=600,retrans=5,x-systemd.automount   0   0
